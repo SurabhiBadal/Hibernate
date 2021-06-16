@@ -2,6 +2,7 @@ package com.lenovo.HibernateDemo;
 import org.springframework.context.annotation.EnableMBeanExport;
 
 import javax.persistence.*;
+import java.util.Arrays;
 import java.util.Date;
 
 @Entity
@@ -90,5 +91,18 @@ public class Address {
 
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "addressID=" + addressID +
+                ", street='" + street + '\'' +
+                ", city='" + city + '\'' +
+                ", isOpen=" + isOpen +
+                ", x=" + x +
+                ", date=" + date +
+                ", image=" + Arrays.toString(image) +
+                '}';
     }
 }
