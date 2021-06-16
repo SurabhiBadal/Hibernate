@@ -19,6 +19,8 @@ public class FetchDemo {
         Address address=session.get(Address.class,1);
         System.out.println(address);
 
+        session.close();
+
 
     }
 }

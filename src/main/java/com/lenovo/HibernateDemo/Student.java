@@ -1,24 +1,27 @@
 package com.lenovo.HibernateDemo;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 public class Student {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String city;
+
+    private Certificate certificate;
+
+    public Student() {
+        super();
+    }
 
     public Student(int id, String name, String city) {
         this.id = id;
         this.name = name;
         this.city = city;
     }
-    public Student() {
-        super();
-    }
+
     public int getId() {
         return id;
     }
@@ -41,6 +44,14 @@ public class Student {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public Certificate getCertificate() {
+        return certificate;
+    }
+
+    public void setCertificate(Certificate certificate) {
+        this.certificate = certificate;
     }
 
     @Override
